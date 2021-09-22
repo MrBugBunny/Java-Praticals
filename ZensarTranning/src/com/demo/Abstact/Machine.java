@@ -1,6 +1,12 @@
 package com.demo.Abstact;
 
-public class Machine 
-{
-	
-}
+public abstract class Machine {
+    
+	   public void rotate() {
+		   System.out.println("Rotate");
+	   }
+	     
+	    public abstract void rush();
+	         
+	    
+	}
