@@ -227,11 +227,6 @@ public class StudentDaoImplimentation implements StudentDao
 				System.out.print("       ");
 				System.out.print(resultSet.getFloat("percent"));
 				System.out.println();
-				/*
-				 * System.out.println(resultSet.getInt("studId")); System.out.print("     ");
-				 * System.out.print(resultSet.getString("studName")); System.out.print("    ");
-				 * System.out.print(resultSet.getFloat("percent"));
-				 */
 			}
 			
 			
@@ -275,7 +270,7 @@ public class StudentDaoImplimentation implements StudentDao
 				ResultSet resultSet=null;
 			
 				String 	query="\r\n"
-						+ "select s.studId,s.studName,r.percent,b.batch_name from student s inner join result r on s.studId = r.studId inner join batches b on  b.batchid=s.batchid where percent>50 order by percent desc limit 10;";
+						+ "select s.studId,s.studName,r.percent,b.batch_name from student s inner join result r on s.studId = r.studId inner join batches b on  b.batchid=s.batchid where percent>50 order by percent desc limit 10";
 				try
 				{
 					connection = ConnectionFactory.getConnection();
@@ -394,7 +389,7 @@ public class StudentDaoImplimentation implements StudentDao
 		String 	query="select b.batchid ,b.batch_name from\r\n"
 				+ "student s join batches b join result r on\r\n"
 				+ "s.batchid = b.batchid and r.studid=s.studid and r.percent<50 "
-				+ "group by  b.Batchid order by count(s.studid) desc limit 1; ";
+				+ "group by  b.Batchid order by count(s.studid) desc limit 1 ";
 		try
 		{
 			connection = ConnectionFactory.getConnection();

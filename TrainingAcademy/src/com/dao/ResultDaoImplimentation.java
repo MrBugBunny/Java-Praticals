@@ -124,12 +124,15 @@ public class ResultDaoImplimentation implements ResultDao
 		@Override
 			public int updateResult(int resultId,int test1,int test2,int test3,int totalMarks,float percent) {
 				// TODO Auto-generated method stub
-				
+			//Connection connection=null;
+			//PreparedStatement preparedStatement =null;
+			//ResultSet resultSet = null;
 				int r=0;
 				try
 				{
 					connection = ConnectionFactory.getConnection();
-					preparedStatement=connection.prepareStatement("update result set test1=?,test2=?,test3=?,totalMarks=?,percent=? where resultId=?");
+					preparedStatement=connection.prepareStatement("update result set test1=?,test2=?,test3=?, totalMarks=?,percent=? where resultId=?");
+					
 					preparedStatement.setInt(1, resultId);
 					preparedStatement.setInt(2, test1);
 					preparedStatement.setInt(3, test2);

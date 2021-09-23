@@ -31,9 +31,9 @@ public class Client {
 
 		do {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("1.Student Details" + "\t\t" + "2.Add Students" + "\n" + "3.Delete Record" + "\t\t"
-					+ "4.Update Student Record." + "\n5.Add Result" + "\t\t" + "6.Delete Result"
-					+ "\n7.Update Student Marks" + "\t\t8.Toppers"+"\n9.Toppers from all Batches"+"\t\t10.Best batch and trainer"+"\n11."
+			System.out.println("1.Student Details" + "\t\t" + "2.Add Students" + "\n" + "3.Delete Record" + "\t\t\t"
+					+ "4.Update Student Record." + "\n5.Add Result" + "\t\t\t" + "6.Delete Result"
+					+ "\n7.Update Student Marks" + "\t\t8.Toppers"+"\n9.Toppers from all Batches"+"\t"+"10.Best batch and trainer"+"\n11."
 							+ "Worst batch ");
 			System.out.println("\nEnter Choice:");
 			int choice = sc.nextInt();
@@ -150,12 +150,10 @@ public class Client {
 
 			case 6:
 
-				System.out.println("Enter Result ID to delete :");
+				System.out.println("Enter record number to delete :");
 				int resultd = sc.nextInt();
 				resultService.removeResult(resultd);
 				break;
-				
-				
 			case 7:
 				System.out.println("Enter result id to update marks :");
 				int resultId1 = sc.nextInt();
